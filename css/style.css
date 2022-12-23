@@ -1,0 +1,151 @@
+/* Navbar */
+.navbar {
+    position: relative;
+    z-index: 2;
+}
+
+.navbar-brand {
+    font-family: Viga;
+    font-size: 32px;
+}
+
+
+/* Jumbotron */
+.jumbotron {
+    background-image: url(../img/header.jpg);
+    background-size: cover;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jumbotron .container {
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 80%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom: 0;
+}
+
+.jumbotron .display-4 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    line-height: 500px;
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, .7);
+}
+
+
+/* Info Panel */
+.info-panel {
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    margin-top: -75px;
+    background-image: url(../img/profil.png);
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    z-index: 3;
+}
+
+
+/* About */
+.pKiri, .pKanan {
+    opacity: 0;
+    transform: translate(-50px, 0) rotate(15deg);
+    transition: 1s;
+}
+
+.pKanan {
+    transform: translate(50px, 0) rotate(-15deg);
+}
+
+.pKiri.pMuncul, .pKanan.pMuncul {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* Portfolio */
+#portfolio {
+    background-color: black;
+}
+
+#portfolio .card {
+    opacity: 0;
+    transform: translate(0, -40px);
+    transition: .5s;
+}
+
+#portfolio .card.muncul {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+#portfolio h2 {
+    color: white;
+}
+
+
+/* Footer */
+#footer {
+    background-color: black;
+    color: white;
+}
+
+#footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+#footer a:hover {
+    text-decoration: none;
+    color: lightslategray;
+    font-weight: bold;
+}
+
+
+/* DEKSTOP VERSION */
+
+@media (min-width: 992px) {
+
+    .navbar-brand,
+    .nav-link {
+        color: white !important;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .7);
+    }
+
+    .nav-link {
+        text-transform: uppercase;
+        margin-right: 25px;
+    }
+
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 3px solid lightslategray;
+        width: 50%;
+        margin: auto;
+        padding-bottom: 5px;
+        margin-bottom: -8px;
+    }
+
+    .jumbotron {
+        margin-top: -75px;
+        height: 620px;
+    }
+
+    .jumbotron .display-4 {
+        font-size: 62px;
+        line-height: 540px;
+    }
+
+}
