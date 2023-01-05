@@ -17,7 +17,7 @@ $(window).scroll(function () {
     });
 
     // About
-    if (wScroll > $('#about').offset().top - 250) {
+    if (wScroll > $('#about').offset().top - 150) {
         $('.pKiri').addClass('pMuncul');
         $('.pKanan').addClass('pMuncul');
     }
