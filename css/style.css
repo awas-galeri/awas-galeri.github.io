@@ -434,6 +434,10 @@ footer .credits a:hover {
         transform: scaleX(0.3);
     }
 
+    .hero {
+        background-image: url(../img/hero-bg.jpg);
+    }
+
     .about .row {
         flex-wrap: wrap;
     }
