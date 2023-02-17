@@ -528,4 +528,12 @@ footer .credits a:hover {
     html {
         font-size: 55%;
     }
+
+    .hero .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .content p {
+        font-size: 1.5rem;
+    }
 }
