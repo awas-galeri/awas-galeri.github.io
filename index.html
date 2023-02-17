@@ -169,18 +169,18 @@
           referrerpolicy="no-referrer-when-downgrade"
           class="map"
         ></iframe>
-        <form action="">
+        <form action="" name="submit-to-google-sheet">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Name" name="name" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" name="email" />
           </div>
           <div class="input-group">
             <i data-feather="phone"></i>
-            <input type="number" placeholder="Phone" />
+            <input type="number" placeholder="Phone" name="phone" />
           </div>
           <button type="submit" class="btn">Kirim</button>
         </form>
@@ -212,6 +212,20 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
+
+    <!-- Form Google Sheet -->
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbz4ktds6T6bY-dx9IPcDakLVRZu4R7IoQdD3Hz4UcqZCcZqLTtvNV19WOyJG_HWKClb/exec";
+      const form = document.forms["submit-to-google-sheet"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
 
     <!-- Tilt JS -->
     <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
