@@ -1,9 +1,24 @@
-// Parallax
-// About
-// $(window).on('load', function () {
-//     $('.pKiri').addClass('pMuncul');
-//     $('.pKanan').addClass('pMuncul');
-// })
+// On Load
+$(window).on('load', function () {
+    setTimeout(() => {
+        // Navbar
+        $('.navbar').addClass('muncul')
+    }, 1000);
+
+    setTimeout(() => {
+        // Hero
+        $('.hero .content h1').addClass('muncul')
+    }, 2000);
+
+    setTimeout(() => {
+        $('.hero .content p').addClass('muncul')
+    }, 3000);
+
+    setTimeout(() => {
+        $('.hero .content .cta').addClass('muncul')
+    }, 4000);
+})
+
 
 // Navbar, toggle class active
 const navbarNav = document.querySelector('.navbar-nav');
@@ -22,29 +37,22 @@ document.addEventListener('click', function (e) {
 })
 
 
-// Parallax
+// On Scroll
 $(window).scroll(function () {
-
-    // Jumbotron
     let wScroll = $(this).scrollTop();
-
-    $('.jumbotron h1').css({
-        'transform': 'translate(0px, ' + wScroll / 9 + '%)'
-    });
 
     // About
     if (wScroll > $('#about').offset().top - 150) {
-        $('.pKiri').addClass('pMuncul');
-        $('.pKanan').addClass('pMuncul');
+        $('.content').addClass('muncul');
     }
 
-
-    // Portfolio
-    if (wScroll > $('#portfolio').offset().top - 250) {
-        $('#portfolio .card').each(function (i) {
+    // Project
+    if (wScroll > $('#project').offset().top - 250) {
+        $('.project-card').each(function (i) {
             setTimeout(function () {
-                $('#portfolio .card').eq(i).addClass('muncul');
+                $('.project-card').eq(i).addClass('muncul');
             }, 400 * (i + 1));
         });
     }
-});
+
+})
