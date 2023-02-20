@@ -408,6 +408,24 @@ input[type="checkbox"]:checked::before {
     text-align: center;
 }
 
+.contact .row form .alert {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: 1.5s;
+}
+
+.contact .row form .alert.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.contact .row form .alert p {
+    font-size: 1.2rem;
+    font-weight: 100;
+    color: var(--sc);
+    margin-bottom: 0.5rem;
+}
+
 .contact .row form .input-group {
     display: flex;
     align-items: center;
@@ -429,7 +447,21 @@ input[type="checkbox"]:checked::before {
     color: var(--bg);
 }
 
-.contact .row form button {
+.contact .row form .input-group textarea {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.3rem;
+    background: none;
+    color: var(--sc);
+    resize: none;
+}
+
+.contact .row form .input-group textarea::placeholder {
+    line-height: 7.5rem;
+    color: var(--bg);
+}
+
+.contact .row form .btn {
     margin-top: 2rem;
     display: inline-block;
     padding: 0.5rem 1.5rem;
@@ -443,7 +475,29 @@ input[type="checkbox"]:checked::before {
     transition: background-color 0.2s linear;
 }
 
-.contact .row form button:hover {
+.contact .row form .btn.hide {
+    display: none;
+}
+
+.contact .row form .btn-load {
+    margin-top: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 100;
+    color: var(--bg);
+    background-color: var(--pr);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 2px rgba(24, 24, 24, 0.8);
+    opacity: 0.8;
+    cursor: not-allowed;
+    display: none;
+}
+
+.contact .row form .btn-load.show {
+    display: inline-block;
+}
+
+.contact .row form .btn:hover {
     color: var(--pr);
     background-color: var(--sc);
 }

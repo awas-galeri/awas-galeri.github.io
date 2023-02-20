@@ -170,19 +170,33 @@
           class="map"
         ></iframe>
         <form action="" name="submit-to-google-sheet">
+          <div class="alert">
+            <p>
+              Terimakasih, pesan Anda telah diterima.
+              <i data-feather="thumbs-up"></i>
+            </p>
+          </div>
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="Name" name="name" />
+            <input type="text" placeholder="Nama" name="nama" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
             <input type="email" placeholder="Email" name="email" />
           </div>
           <div class="input-group">
-            <i data-feather="phone"></i>
-            <input type="number" placeholder="Phone" name="phone" />
+            <i data-feather="message-square"></i>
+            <textarea
+              name="pesan"
+              id=""
+              cols="10"
+              rows="5"
+              placeholder="Pesan"
+              name="pesan"
+            ></textarea>
           </div>
           <button type="submit" class="btn">Kirim</button>
+          <button type="submit" class="btn-load">Loading..</button>
         </form>
       </div>
     </section>
@@ -218,11 +232,38 @@
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbz4ktds6T6bY-dx9IPcDakLVRZu4R7IoQdD3Hz4UcqZCcZqLTtvNV19WOyJG_HWKClb/exec";
       const form = document.forms["submit-to-google-sheet"];
+      const btnKirim = document.querySelector(".contact .row form .btn");
+      const btnLoading = document.querySelector(".btn-load");
+      const myAlert = document.querySelector(".alert");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => console.log("Success!", response))
+          .then((response) => {
+            console.log("Success!", response),
+              // hilangkan tombol kirim
+              btnKirim.classList.add("hide");
+            // tampilkan tombol loading
+            btnLoading.classList.add("show"),
+              // hilangkan tombol loading setelah 2 detik
+              setTimeout(function () {
+                btnLoading.classList.remove("show");
+              }, 2000);
+            // tampilkan tombol kirim setelah 2 detik
+            setTimeout(function () {
+              btnKirim.classList.remove("hide");
+            }, 2000);
+            setTimeout(() => {
+              // tampilkan alert
+              myAlert.classList.add("show");
+              // reset form
+              form.reset();
+            }, 3000);
+            // hilangkan alert setelah 3 detik
+            setTimeout(function () {
+              myAlert.classList.remove("show");
+            }, 5000);
+          })
           .catch((error) => console.error("Error!", error.message));
       });
     </script>
