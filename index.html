@@ -166,14 +166,12 @@
     <section id="contact" class="contact">
       <h2>Contact <span>Us</span></h2>
       <p>
-        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, ut -->
-        <!-- tempora. Fuga porro ex vitae. -->
         Adapun masukan dari Anda, silakan isi form dibawah ini dan klik tombol
         kirim.
       </p>
       <div class="row">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2568.5139154089943!2d112.05876810939475!3d-7.834931620304753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1676602568955!5m2!1sid!2sid"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7534764494917!2d112.06007491410872!3d-7.815899079776445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857175f9cda31%3A0x3123610563e44ab3!2sSimpang%20Lima%20Gumul%20-%20KEDIRI!5e0!3m2!1sid!2sid!4v1676862819939!5m2!1sid!2sid"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -188,11 +186,11 @@
           </div>
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="Nama" name="nama" />
+            <input type="text" placeholder="Nama" name="nama" required />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="email" placeholder="Email" name="email" />
+            <input type="email" placeholder="Email" name="email" required />
           </div>
           <div class="input-group">
             <i data-feather="message-square"></i>
@@ -203,6 +201,7 @@
               rows="5"
               placeholder="Pesan"
               name="pesan"
+              required
             ></textarea>
           </div>
           <button type="submit" class="btn">Kirim</button>
@@ -272,7 +271,7 @@
             // hilangkan alert setelah 3 detik
             setTimeout(function () {
               myAlert.classList.remove("show");
-            }, 5000);
+            }, 6000);
           })
           .catch((error) => console.error("Error!", error.message));
       });
