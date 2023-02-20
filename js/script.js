@@ -108,3 +108,28 @@ $(window).scroll(function () {
     }
 
 })
+
+
+// Memunculkan Modal Box Ketika di Klik
+const tombolJokes = document.querySelector('#tombol-jokes')
+const modal = document.querySelector('.modal')
+const modalBox = document.querySelector('.modal-box')
+const modalBody = document.querySelector('.modal-body')
+const close = document.querySelector('.close-modal')
+
+tombolJokes.addEventListener('click', function () {
+    fetch('https://candaan-api.vercel.app/api/text/random')
+        .then((response) => response.json())
+        .then((data) => {
+            modal.classList.add('show')
+            modalBody.innerHTML = data.data;
+            close.addEventListener('click', function () {
+                modal.classList.remove('show')
+            })
+            document.addEventListener('click', function (e) {
+                if (!modalBox.contains(e.target)) {
+                    modal.classList.remove('show')
+                }
+            })
+        })
+})

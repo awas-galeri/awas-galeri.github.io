@@ -55,6 +55,56 @@ body.dark {
 }
 
 
+/* Modal Box */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    display: none;
+}
+
+.modal.show {
+    opacity: 1;
+    display: flex;
+}
+
+.modal .modal-box {
+    background-color: var(--bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 3px 3px rgba(253, 150, 150, 0.8);
+    color: var(--sc);
+}
+
+.modal .modal-box .modal-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal .modal-box .close-modal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--pr);
+    transition: color 0.2s linear;
+}
+
+.modal .modal-box .close-modal:hover {
+    color: var(--sc);
+}
+
+
 /* Navbar Section */
 .navbar {
     display: flex;
