@@ -19,19 +19,13 @@ $(window).on('load', function () {
     }, 4000);
 })
 
-// Toggle untuk dropdown tema
-const toggle = document.querySelector('#theme');
-const dropdown = document.querySelector('.theme-link');
-
-toggle.addEventListener('click', function () {
-    dropdown.classList.toggle('muncul');
-})
-
 
 // Ganti tema
 function ubah() {
     const body = document.body;
     const nav = document.querySelector('.navbar');
+    const sun = document.querySelector('.sun');
+    const moon = document.querySelector('.moon');
     const about = document.querySelector('.about h2');
     const hero = document.querySelector('.hero');
     const content = document.querySelector('.about .row .content h3');
@@ -50,6 +44,8 @@ function ubah() {
 
     body.classList.toggle('dark');
     nav.classList.toggle('dark');
+    sun.classList.toggle('hide');
+    moon.classList.toggle('show');
     about.classList.toggle('dark');
     hero.classList.toggle('dark');
     content.classList.toggle('dark');

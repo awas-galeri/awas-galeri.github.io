@@ -103,6 +103,18 @@ body.dark {
     transform: scaleX(0.7);
 }
 
+.navbar .navbar-extra .sun.hide {
+    display: none;    
+}
+
+.navbar .navbar-extra .moon.hide {
+    display: none;
+}
+
+.navbar .navbar-extra .moon.hide.show {
+    display: inline-block;
+}
+
 .navbar .navbar-extra a {
     color: var(--pr);
     margin: 0 0.2rem;
