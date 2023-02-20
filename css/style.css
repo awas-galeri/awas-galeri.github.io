@@ -744,4 +744,17 @@ footer .credits a:hover {
     .hero .content p {
         font-size: 1.5rem;
     }
+
+    .modal .modal-box {
+        width: 90%;
+    }
+
+    .modal .modal-box .modal-title {
+        font-size: 2rem;
+    }
+
+    .modal .modal-box .modal-body {
+        font-size: 1.5rem;
+    }
+
 }
