@@ -31,6 +31,30 @@ body.dark {
 }
 
 
+/* Scroll Top Button */
+.scrolltop {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-color: var(--pr);
+    color: var(--bg);
+    padding: 0.5rem 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s;
+    box-shadow: 0 0 5px 5px rgba(253, 150, 150, 0.8);
+}
+
+.scrolltop.show {
+    opacity: 0.5;
+}
+
+.scrolltop.show:hover {
+    opacity: 1;
+}
+
+
 /* Navbar Section */
 .navbar {
     display: flex;

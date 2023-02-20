@@ -81,6 +81,14 @@ document.addEventListener('click', function (e) {
 })
 
 
+// Memunculkan tombol scrolltop ketika discroll ke bawah
+const scrollTop = document.querySelector('.scrolltop');
+
+window.addEventListener('scroll', function () {
+    scrollTop.classList.toggle('show', window.scrollY > 500);
+})
+
+
 // On Scroll
 $(window).scroll(function () {
     let wScroll = $(this).scrollTop();
