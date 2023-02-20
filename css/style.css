@@ -543,7 +543,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .contact .row form .input-group textarea::placeholder {
-    line-height: 7.5rem;
+    line-height: 7rem;
     color: var(--bg);
 }
 
