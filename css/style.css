@@ -631,18 +631,12 @@ footer .credits {
     color: var(--bg);
 }
 
-footer .credits a {
+footer .credits span {
     color: var(--sc);
 }
 
-footer .credits a:hover {
-    text-decoration: underline;
-}
-
-
 
 /* Media Queries */
-
 
 /* Laptop */
 @media (max-width: 1366px) {
