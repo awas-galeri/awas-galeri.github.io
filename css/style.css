@@ -600,6 +600,7 @@ footer {
 
 footer .sosmed {
     padding: 1rem 0;
+    margin-top: 0.3 rem;
 }
 
 footer .sosmed a {
@@ -613,12 +614,12 @@ footer .sosmed a:hover {
 }
 
 footer .links {
-    margin-bottom: 1.3rem;
+    margin-top: 1.3rem;
 }
 
 footer .links a {
     color: var(--bg);
-    padding: 0.7rem 1rem;
+    padding: 1rem;
 }
 
 footer .links a:hover {
@@ -722,6 +723,14 @@ footer .credits span {
 
     .contact .row form {
         padding-top: 2rem;
+    }
+
+    footer .links a {
+        font-size: 1.3rem;
+    }
+
+    footer .credits {
+        font-size: 1.1rem;
     }
 }
 
